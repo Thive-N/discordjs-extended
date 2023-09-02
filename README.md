@@ -31,6 +31,8 @@
 
 # Overview
 
+A modular framework building off discord.js which aims to make bot creation easier and more intuitive by removing the need to write boilerplate code.
+
 -   Modular easy to use cog system for loading commands and events
 -   Easy to use command and event decorators
 -   Command cooldowns
@@ -41,7 +43,7 @@ This library is in continuous development as of now
 
 join the discord server to get the latest updates
 
-[![Discord](https://discordapp.com/api/guilds/1142235186352885860/widget.png?style=banner2)](https://discord.gg/4QgjKF)
+![Discord](https://img.shields.io/badge/pending-grey?style=for-the-badge&logo=discord)
 
 # License
 
