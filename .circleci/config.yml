@@ -10,12 +10,15 @@ jobs:
         steps:
             - checkout
             - run:
+                  name: prebuild dependencies
+                  command: sudo npm install -g pnpm
+            - run:
                   name: install and run tests
-                  command: npm install && npm run test
+                  command: pnpm install && pnpm test
 
             - run:
                   name: get test coverage
-                  command: npm run coverage
+                  command: pnpm  coverage
 
             - codecov/upload:
                   file: 'coverage.lcov'
