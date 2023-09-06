@@ -9,14 +9,17 @@
     "scripts": {
         "build": "tsc",
         "test": "mocha",
-        "coverage": "nyc pnpm test"
+        "coverage": "nyc mocha && nyc report --reporter=text-lcov > coverage.lcov",
+        "codecov": "codecov"
     },
     "devDependencies": {
+        "@istanbuljs/nyc-config-typescript": "^1.0.2",
         "@types/chai": "^4.3.6",
         "@types/jasmine": "^4.3.5",
         "@types/mocha": "^10.0.1",
         "@types/node": "^20.5.8",
         "chai": "^4.3.8",
+        "codecov": "^3.8.3",
         "ignore-styles": "^5.0.1",
         "jasmine": "^5.1.0",
         "mocha": "^10.2.0",

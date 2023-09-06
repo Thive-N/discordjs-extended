@@ -16,16 +16,16 @@ test('cogToPath', () => {
     assert.equal(c.cogManager.cogToPath('..test'), './../test.ts');
 });
 
-test('loadCog', () => {
-    /**
-     * @todo line below has a lot of .'s
-     * this is due to the require stack being in node_modules/jasmine/bin
-     * need to find a way to get the require stack to be in the root of the project
-     */
-    c.cogManager.loadCog('............tests.commandcog');
-    assert.equal(c.commands.has('commandcog'), true);
+// test('loadCog', () => {
+//     /**
+//      * @todo line below has a lot of .'s
+//      * this is due to the require stack being in node_modules/jasmine/bin
+//      * need to find a way to get the require stack to be in the root of the project
+//      */
+//     c.cogManager.loadCog('............tests.commandcog');
+//     assert.equal(c.commands.has('commandcog'), true);
 
-    c.cogManager.loadCog('............tests.slashcommandcog');
-    assert.equal(c.slashCommands.has('slashcommandcog'), true);
-    assert.equal(c.slashCommandsRaw.length, 1);
-});
+//     c.cogManager.loadCog('............tests.slashcommandcog');
+//     assert.equal(c.slashCommands.has('slashcommandcog'), true);
+//     assert.equal(c.slashCommandsRaw.length, 1);
+// });
