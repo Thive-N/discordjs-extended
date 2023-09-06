@@ -18,7 +18,7 @@ jobs:
 
             - run:
                   name: get test coverage
-                  command: pnpm  coverage
+                  command: pnpm coverage
 
             - codecov/upload:
                   file: 'coverage.lcov'

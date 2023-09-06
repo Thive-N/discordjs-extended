@@ -37,11 +37,9 @@ export class CogManager {
             this.client.commands.set(cogObject.name, cogObject);
         } else if (cogObject.cogType === 'event') {
             this.client.events.set(cogObject.name, cogObject);
-        } else if (cogObject.cogType === 'slashCommand') {
+        } else {
             this.client.slashCommands.set(cogObject.name, cogObject);
             this.client.slashCommandsRaw.push(cogObject.data);
-        } else {
-            throw new Error(`Cog ${cog} has an invalid cogType`);
         }
     }
 

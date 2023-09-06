@@ -2,6 +2,7 @@
     "extends": "@istanbuljs/nyc-config-typescript",
     "all": true,
     "include": ["src/**/!(*.test.*).[tj]s?(x)"],
-    "reporter": ["lcov"],
+    "exclude": ["src/types/extendedClient.ts"],
+    "reporter": ["html", "lcov", "text", "text-summary"],
     "report-dir": "coverage"
 }

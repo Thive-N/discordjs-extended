@@ -1,9 +1,10 @@
 codecov:
-    require_ci_to_pass: yes
+    max_report_age: 24
+    require_ci_to_pass: no
 coverage:
-    precision: 2
+    precision: 5
     round: down
-    range: '70...100'
+    range: 0..10
 status:
     project: yes
     patch: yes

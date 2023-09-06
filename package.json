@@ -9,6 +9,7 @@
     "scripts": {
         "build": "tsc",
         "test": "mocha",
+        "test:coverage": "nyc mocha",
         "coverage": "nyc mocha && nyc report --reporter=text-lcov > coverage.lcov",
         "codecov": "codecov"
     },

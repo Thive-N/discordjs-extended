@@ -1,4 +1,4 @@
-import { command, commandExecute } from '../src/types/CogTemplate';
+import { command, commandExecute } from '../../src/types/CogTemplate';
 
 const execute: commandExecute = async (client, message) => {
     await message.channel.send('Hello from a cog!');

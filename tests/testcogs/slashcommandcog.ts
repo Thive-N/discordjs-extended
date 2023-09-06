@@ -1,5 +1,5 @@
 import { SlashCommandBuilder } from 'discord.js';
-import { slashCommand, slashCommandExecute } from '../src/types/CogTemplate';
+import { slashCommand, slashCommandExecute } from '../../src/types/CogTemplate';
 
 const execute: slashCommandExecute = async (client, interaction) => {
     await interaction.reply('Hello from a cog!');
