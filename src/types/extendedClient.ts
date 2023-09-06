@@ -1,6 +1,10 @@
-import { Client, Collection } from 'discord.js';
+import { Client } from 'discord.js';
 
 class ExtendedClient extends Client {
+    /**
+     * @param {any} options
+     * @inheritdoc Client
+     */
     public commands: any;
     public slashCommands: any;
     public events: any;

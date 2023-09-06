@@ -9,13 +9,23 @@ export class CogManager {
         this.client = client;
     }
 
-    // changes the cog string to a path
-    // eg "test" -> "./test.ts"
-    // eg "cogs.test" -> "./cogs/test.ts"
+    /** converts a cog string to a path
+     * @param {string} cog
+     * @returns {string}
+     * @memberof CogManager
+     * @example cogManager.cogToPath('test'); // returns './test.ts'
+     */
     cogToPath(cog: string): string {
         return `./${cog.replace(/\./g, '/')}.ts`;
     }
 
+    /**  loads a cog from a cog string (see cogToPath)
+     * sets the command/event/slashCommand in the client depending on the cogType
+     * @param {string} cog
+     * @returns {void}
+     * @memberof CogManager
+     * @example cogManager.loadCog('test'); // loads the cog from ./test.ts
+     */
     loadCog(cog: string): void {
         const path = this.cogToPath(cog);
         const cogModule = require(path);
@@ -32,5 +42,17 @@ export class CogManager {
         } else {
             throw new Error(`Cog ${cog} has an invalid cogType`);
         }
+    }
+
+    /** loads multiple cogs from an array of cog strings (see cogToPath)
+     * @param {string[]} cogs
+     * @returns {void}
+     * @memberof CogManager
+     * @example cogManager.loadCogs(['test', 'cogs.test']); // loads the cogs from ./test.ts and ./cogs/test.ts
+     */
+    loadCogs(cogs: string[]): void {
+        cogs.forEach(cog => {
+            this.loadCog(cog);
+        });
     }
 }

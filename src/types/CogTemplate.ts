@@ -1,7 +1,13 @@
 import { Message } from 'discord.js';
 import { ExtendedClient } from './extendedClient';
-export type commandExecute = (client: ExtendedClient, message: Message, args: string[]) => Promise<void>;
+
+// The three types of cogs that can be loaded
 export type commandCogType = 'command' | 'event' | 'slashCommand';
+
+// type for the execute function of a command
+export type commandExecute = (client: ExtendedClient, message: Message, args: string[]) => Promise<void>;
+
+//type for the command cog
 export interface command {
     cogType: commandCogType; // Type of cog
     name: string; // Name of the command
@@ -11,8 +17,10 @@ export interface command {
     execute: commandExecute; // Function to execute when the command is called
 }
 
+// type for the execute function of a slash command
 export type slashCommandExecute = (client: ExtendedClient, message: Message, args: string[]) => Promise<void>;
 
+// type for the slash command cog
 export interface slashCommand {
     cogType: commandCogType; // Type of cog
     name: string; // Name of the command
@@ -22,8 +30,10 @@ export interface slashCommand {
     execute: slashCommandExecute; // Function to execute when the command is called
 }
 
+// type for the execute function of an event
 export type eventExecute = (client: ExtendedClient, ...args: any[]) => Promise<void>;
 
+// type for the event cog
 export interface event {
     cogType: commandCogType; // Type of cog
     name: string; // Name of the event
