@@ -1,5 +1,6 @@
 {
-    "name": "discord-cogs-ts",
+    "type": "module",
+    "name": "discordjs-extended",
     "version": "1.0.0",
     "description": "an extended discord framework building on discord.js",
     "main": "src/index.ts",
