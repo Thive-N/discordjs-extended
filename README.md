@@ -25,8 +25,9 @@
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg">
   </a>
   <a href="https://www.gnu.org/licenses/gpl-3.0.en.html"><img src="https://img.shields.io/badge/license-GPLv3-blue"></a>
-</p>
-<p align="center">  <a><img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"></a>
+<a href="https://codecov.io/gh/Thive-N/discordjs-extended" > 
+ <img src="https://codecov.io/gh/Thive-N/discordjs-extended/graph/badge.svg?token=ZWBD9KU4CD"/> 
+ </a>
 </p>
 
 # Overview
