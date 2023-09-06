@@ -39,6 +39,7 @@ export class CogManager {
             this.client.events.set(cogObject.name, cogObject);
         } else if (cogObject.cogType === 'slashCommand') {
             this.client.slashCommands.set(cogObject.name, cogObject);
+            this.client.slashCommandsRaw.push(cogObject.data);
         } else {
             throw new Error(`Cog ${cog} has an invalid cogType`);
         }

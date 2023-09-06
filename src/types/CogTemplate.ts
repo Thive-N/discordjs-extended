@@ -1,4 +1,4 @@
-import { Message } from 'discord.js';
+import { Message, SlashCommandBuilder } from 'discord.js';
 import { ExtendedClient } from './extendedClient';
 
 // The three types of cogs that can be loaded
@@ -23,6 +23,7 @@ export type slashCommandExecute = (client: ExtendedClient, message: Message, arg
 // type for the slash command cog
 export interface slashCommand {
     cogType: commandCogType; // Type of cog
+    data: SlashCommandBuilder; // Data for the slash command
     name: string; // Name of the command
     description: string; // Description of the command
     aliases?: string[]; // Aliases for the command
