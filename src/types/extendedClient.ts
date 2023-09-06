@@ -1,5 +1,5 @@
 import { Client, REST, Routes } from 'discord.js';
-import { CogManager } from 'src/cogManager';
+import { CogManager } from '../cogManager';
 import { command, commandCogType } from './CogTemplate';
 
 class ExtendedClient extends Client {
