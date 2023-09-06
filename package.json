@@ -7,18 +7,23 @@
     "license": "LGPL-3.0-or-later",
     "private": false,
     "scripts": {
-        "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
-        "coverage": "nyc -r text -e .ts -x \"tests/*.test.ts\" npm run test"
+        "run": "ts-node src/index.ts",
+        "test": "mocha -r ts-node/register tests/**/*.test.ts",
+        "coverage": "mocha "
     },
     "devDependencies": {
-        "@types/jasmine": "^4.3.5",
+        "@istanbuljs/nyc-config-typescript": "^1.0.2",
+        "@types/mocha": "^10.0.1",
         "@types/node": "^20.5.8",
-        "jasmine": "^5.1.0",
+        "mocha": "^10.2.0",
         "nyc": "^15.1.0",
+        "source-map-support": "^0.5.21",
         "ts-node": "^10.9.1",
+        "tsconfig-paths": "^4.2.0",
         "typescript": "^5.2.2"
     },
     "dependencies": {
-        "discord.js": "^14.13.0"
+        "discord.js": "^14.13.0",
+        "string-width": "^6.1.0"
     }
 }
