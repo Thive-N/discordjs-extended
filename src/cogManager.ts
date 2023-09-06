@@ -16,7 +16,7 @@ export class CogManager {
      * @example cogManager.cogToPath('test'); // returns './test.ts'
      */
     cogToPath(cog: string): string {
-        return `./${cog.replace(/\./g, '/')}.ts`;
+        return `./${cog.replace(/\.\./g, ',').replace(/\./g, '/').replace(/\,/g, '../')}.ts`;
     }
 
     /**  loads a cog from a cog string (see cogToPath)
@@ -28,7 +28,7 @@ export class CogManager {
      */
     loadCog(cog: string): void {
         const path = this.cogToPath(cog);
-        const cogModule = require(path);
+        const cogModule = require.main?.require(path);
         if (!cogModule.Cog) {
             throw new Error(`Cog ${cog} does not export a Cog object`);
         }
